@@ -1,0 +1,64 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #803cb1; /* Roxo escuro (índigo) */
+  text-align: center;
+  margin-top: 100px;
+  overflow: hidden;
+  position: relative; /* para posicionar botão absoluto */
+  height: 100vh; /* para garantir altura total da tela */
+}
+
+h1 {
+  color: #000000;
+}
+
+.button-container {
+  margin-top: 40px;
+  position: relative; /* base para o botão "não" absoluto */
+  height: 100px; /* espaço para os botões */
+}
+
+button {
+  padding: 15px 30px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 10px;
+  transition: all 0.2s ease;
+  position: relative; /* padrão */
+}
+
+#yesBtn {
+  background-color: #28a745;
+  color: white;
+}
+
+#noBtn {
+  background-color: #dc3545;
+  color: white;
+  position: absolute; /* para poder mover pelo JS */
+  top: 0;
+  left: 150px; /* posição inicial */
+}
+
+#message {
+  margin-top: 40px;
+  font-size: 24px;
+  color: #7d1397;
+  font-weight: bold;
+  display: none;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+/* Animação de fade-in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
