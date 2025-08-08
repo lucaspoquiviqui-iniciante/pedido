@@ -21,12 +21,11 @@ h1 {
 .button-container {
   margin-top: 40px;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  align-items: center;
   position: relative;
   width: 100%;
-  max-width: 400px;
+  max-width: 500px;
   height: 100px;
 }
 
@@ -37,7 +36,6 @@ button {
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.2s ease;
-  position: relative;
 }
 
 #yesBtn {
@@ -73,20 +71,19 @@ button {
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 500px) {
   h1 {
-    font-size: 7vw;
-  }
-
-  button {
-    width: 100%;
-    font-size: 1.2rem;
+    font-size: 8vw;
   }
 
   .button-container {
     flex-direction: column;
-    align-items: center;
-    height: auto;
+    height: 150px;
+  }
+
+  button {
+    width: 80%;
+    font-size: 1.2rem;
   }
 
   #noBtn {
