@@ -1,32 +1,43 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #803cb1; /* Roxo escuro (índigo) */
+  background-color: #803cb1;
   text-align: center;
-  margin-top: 100px;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
-  position: relative; /* para posicionar botão absoluto */
-  height: 100vh; /* para garantir altura total da tela */
 }
 
 h1 {
   color: #000000;
+  font-size: 6vw;
+  margin: 20px;
 }
 
 .button-container {
   margin-top: 40px;
-  position: relative; /* base para o botão "não" absoluto */
-  height: 100px; /* espaço para os botões */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  height: 100px;
 }
 
 button {
   padding: 15px 30px;
-  font-size: 18px;
+  font-size: 1rem;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  margin: 10px;
   transition: all 0.2s ease;
-  position: relative; /* padrão */
+  position: relative;
 }
 
 #yesBtn {
@@ -37,21 +48,20 @@ button {
 #noBtn {
   background-color: #dc3545;
   color: white;
-  position: absolute; /* para poder mover pelo JS */
+  position: absolute;
   top: 0;
-  left: 150px; /* posição inicial */
+  left: 150px;
 }
 
 #message {
   margin-top: 40px;
-  font-size: 24px;
+  font-size: 1.5rem;
   color: #7d1397;
   font-weight: bold;
   display: none;
   animation: fadeIn 1s ease-in-out forwards;
 }
 
-/* Animação de fade-in */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -60,5 +70,26 @@ button {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (max-width: 400px) {
+  h1 {
+    font-size: 7vw;
+  }
+
+  button {
+    width: 100%;
+    font-size: 1.2rem;
+  }
+
+  .button-container {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+
+  #noBtn {
+    position: absolute;
   }
 }
