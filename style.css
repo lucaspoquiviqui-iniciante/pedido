@@ -36,19 +36,26 @@ button {
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.2s ease;
+  max-width: 90vw;
 }
 
 #yesBtn {
   background-color: #28a745;
   color: white;
+  width: 140px;
+  position: relative;
+  z-index: 1;
 }
 
 #noBtn {
   background-color: #dc3545;
   color: white;
-  position: absolute;
-  top: 0;
-  left: 150px;
+  position: fixed; /* posição fixa relativa à viewport */
+  width: 140px;
+  transition: top 0.2s ease, left 0.2s ease;
+  z-index: 10;
+  top: 150px; /* posição inicial */
+  left: 150px; /* posição inicial */
 }
 
 #message {
@@ -71,6 +78,7 @@ button {
   }
 }
 
+/* Responsividade para telas menores */
 @media (max-width: 500px) {
   h1 {
     font-size: 8vw;
@@ -78,15 +86,12 @@ button {
 
   .button-container {
     flex-direction: column;
-    height: 150px;
+    align-items: center;
+    height: 200px;
   }
 
-  button {
-    width: 80%;
+  #yesBtn, #noBtn {
+    width: 70vw;
     font-size: 1.2rem;
-  }
-
-  #noBtn {
-    position: absolute;
   }
 }
